@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#1a1410" />
+<meta name="description" content="Qiangbiao Co., Ltd. (Strong Mark) — tire pyrolysis: industrial fuel oil, carbon black, and steel wire in Tanzania." />
+<title>Qiangbiao Energy — Qiangbiao Co., Ltd. / Strong Mark</title>
+<style>
+  :root {
+    --bg: #0f0e0c;
+    --screen: #12100e;
+    --card: #1e1a16;
+    --card-border: rgba(212, 160, 64, 0.18);
+    --amber: #d4a040;
+    --amber-soft: #e8c078;
+    --amber-dim: rgba(212, 160, 64, 0.12);
+    --text: #f3efe6;
+    --muted: #a89f90;
+    --line: rgba(255,255,255,0.06);
+    --safe-bottom: 80px;
+    --radius: 14px;
+    --content-max: 920px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html {
+    scroll-behavior: smooth;
+    background: var(--bg);
+  }
+  body {
+    min-height: 100vh;
+    background:
+      radial-gradient(ellipse at 20% 0%, #2a2218 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 100%, #1a1510 0%, transparent 45%),
+      #0a0908;
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: var(--safe-bottom);
+  }
+  #lang-root { min-height: 100vh; }
+  .wrap {
+    width: 100%;
+    max-width: var(--content-max);
+    margin: 0 auto;
+  }
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(18,16,14,0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 16px;
+    max-width: var(--content-max);
+    margin: 0 auto;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+  }
+  .brand-mark {
+    width: 32px; height: 32px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, var(--amber), #8a5a18);
+    display: grid; place-items: center;
+    font-size: 13px; font-weight: 800; color: #1a1208;
+    flex-shrink: 0;
+  }
+  .brand-text { min-width: 0; }
+  .brand-text .name {
+    font-size: 14px; font-weight: 700; line-height: 1.2;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .brand-text .sub {
+    font-size: 11px; color: var(--muted); letter-spacing: 0.02em;
+  }
+  .lang-toggle {
+    display: flex;
+    background: var(--amber-dim);
+    border: 1px solid var(--card-border);
+    border-radius: 999px;
+    padding: 2px;
+    flex-shrink: 0;
+  }
+  .lang-toggle button {
+    border: 0; background: transparent;
+    color: var(--muted);
+    font-size: 12px; font-weight: 700;
+    padding: 7px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+  .lang-toggle button.active {
+    background: var(--amber);
+    color: #1a1208;
+  }
+  .hero {
+    position: relative;
+    min-height: 320px;
+  }
+  .hero img {
+    width: 100%; height: 320px;
+    object-fit: cover; display: block;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(15,14,12,0.2) 0%, rgba(15,14,12,0.75) 55%, var(--screen) 100%);
+    display: flex; flex-direction: column; justify-content: flex-end;
+  }
+  .hero-copy {
+    max-width: var(--content-max);
+    margin: 0 auto;
+    width: 100%;
+    padding: 28px 16px 24px;
+  }
+  .hero-badge {
+    align-self: flex-start;
+    display: inline-block;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--amber);
+    background: rgba(0,0,0,0.35);
+    border: 1px solid var(--card-border);
+    padding: 5px 10px; border-radius: 6px;
+    margin-bottom: 12px;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 4vw, 34px);
+    line-height: 1.25; font-weight: 800;
+    margin-bottom: 10px;
+    max-width: 18em;
+  }
+  .hero p {
+    font-size: clamp(13.5px, 1.6vw, 16px);
+    line-height: 1.6; color: #d8d0c4;
+    max-width: 42em;
+  }
+  main.wrap {
+    padding: 0 16px 8px;
+  }
+  section {
+    padding: 28px 0 8px;
+  }
+  .sec-title {
+    font-size: clamp(17px, 2.2vw, 22px);
+    font-weight: 800;
+    margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .sec-title::before {
+    content: "";
+    width: 4px; height: 18px;
+    background: var(--amber);
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .body-text {
+    font-size: clamp(14px, 1.5vw, 15.5px);
+    line-height: 1.7; color: #cfc6b8;
+  }
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .card img {
+    width: 100%; height: 160px;
+    object-fit: cover; display: block;
+  }
+  .card-body {
+    padding: 14px 16px 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-tag {
+    display: inline-block;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 6px;
+  }
+  .card h3 {
+    font-size: 15.5px; font-weight: 700; margin-bottom: 8px; line-height: 1.35;
+  }
+  .card p {
+    font-size: 13px; line-height: 1.6; color: var(--muted);
+  }
+  .why-list, .serve-list {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .why-list li, .serve-list li {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 14px; line-height: 1.55; color: #cfc6b8;
+  }
+  .why-list li strong { color: var(--amber-soft); font-weight: 700; }
+  .serve-list li {
+    display: flex; gap: 10px; align-items: flex-start;
+  }
+  .serve-list li::before {
+    content: "▸";
+    color: var(--amber);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .scene-img {
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin: 0 0 14px;
+    border: 1px solid var(--card-border);
+  }
+  .scene-img img { width: 100%; height: 180px; object-fit: cover; display: block; }
+  .contact-hero {
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 14px;
+    border: 1px solid var(--card-border);
+  }
+  .contact-hero img { width: 100%; height: 160px; object-fit: cover; display: block; }
+  .contact-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 6px 18px;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .contact-row {
+    display: flex; flex-direction: column; gap: 3px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .contact-row:last-child { border-bottom: 0; }
+  .contact-row .label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--amber);
+  }
+  .contact-row a, .contact-row span {
+    font-size: 14.5px; color: var(--text); text-decoration: none; line-height: 1.4;
+  }
+  .contact-row a:hover { color: var(--amber-soft); }
+  .contact-note {
+    margin-top: 14px;
+    font-size: 13.5px; line-height: 1.6; color: var(--muted);
+  }
+  .site-footer {
+    max-width: var(--content-max);
+    margin: 28px auto 0;
+    padding: 16px 16px 8px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+  }
+  .sticky-cta {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 50;
+    padding: 10px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+    background: linear-gradient(180deg, transparent, rgba(18,16,14,0.92) 22%, #12100e);
+    display: flex; justify-content: center;
+  }
+  .sticky-cta-inner {
+    display: flex; gap: 10px;
+    width: 100%;
+    max-width: var(--content-max);
+  }
+  .sticky-cta a {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px; font-weight: 700;
+    padding: 14px 12px;
+    border-radius: 12px;
+  }
+  .btn-call {
+    background: linear-gradient(135deg, #e0b04a, #b07820);
+    color: #1a1208;
+    box-shadow: 0 6px 20px rgba(212,160,64,0.28);
+  }
+  .btn-mail {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--card-border);
+    color: var(--amber-soft);
+  }
+  .btn-call:hover { filter: brightness(1.05); }
+  .btn-mail:hover { background: rgba(255,255,255,0.1); }
+  #lang-root[data-lang="zh"] .en { display: none !important; }
+  #lang-root[data-lang="en"] .zh { display: none !important; }
+
+  /* Tablet */
+  @media (min-width: 640px) {
+    .hero { min-height: 380px; }
+    .hero img { height: 380px; }
+    .hero-copy { padding: 36px 24px 32px; }
+    main.wrap { padding: 0 24px 8px; }
+    .topbar-inner { padding: 14px 24px; }
+    .product-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      align-items: stretch;
+    }
+    .card img { height: 140px; }
+    .card.primary {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1.1fr 1.4fr;
+    }
+    .card.primary img {
+      height: 100%;
+      min-height: 220px;
+    }
+    .scene-img img { height: 220px; }
+    .contact-hero img { height: 200px; }
+    .contact-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 0 20px;
+    }
+    .contact-row { border-bottom: 1px solid var(--line); }
+    .why-list, .serve-list { gap: 12px; }
+  }
+
+  /* Desktop */
+  @media (min-width: 900px) {
+    :root { --content-max: 960px; }
+    .hero { min-height: 420px; }
+    .hero img { height: 420px; }
+    .card.primary {
+      grid-column: auto;
+      display: flex;
+      flex-direction: column;
+    }
+    .card.primary img {
+      height: 180px;
+      min-height: 0;
+    }
+    .product-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .card img { height: 170px; }
+  }
+</style>
+</head>
+<body>
+  <div id="lang-root" data-lang="en">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">
+          <div class="brand-mark">强</div>
+          <div class="brand-text">
+            <div class="name">
+              <span class="en">Qiangbiao / Strong Mark</span>
+              <span class="zh">强标有限公司</span>
+            </div>
+            <div class="sub">
+              <span class="en">Tire pyrolysis · Tanzania · Qiangbiao Energy</span>
+              <span class="zh">废胎裂解 · 坦桑尼亚 · Qiangbiao Energy</span>
+            </div>
+          </div>
+        </div>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" id="btn-en" class="active" onclick="setLang('en')">EN</button>
+          <button type="button" id="btn-zh" onclick="setLang('zh')">中文</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="hero">
+      <img src="images/hero-tire-cycle.webp" alt="Scrap tire circular energy" width="1200" height="675" />
+      <div class="hero-overlay">
+        <div class="hero-copy">
+          <span class="hero-badge">
+            <span class="en">Industrial circular fuel</span>
+            <span class="zh">工业循环用能</span>
+          </span>
+          <h1>
+            <span class="en">From scrap tires to industrial energy</span>
+            <span class="zh">废胎再生，工业用能</span>
+          </h1>
+          <p>
+            <span class="en">Qiangbiao Co., Ltd. (Strong Mark) converts end-of-life tires through high-temperature pyrolysis into tire-derived oil, carbon black, and steel wire—practical circular fuel and materials for industrial buyers in Tanzania and nearby markets.</span>
+            <span class="zh">强标有限公司（Qiangbiao Co., Ltd. / Strong Mark）专注高温裂解废轮胎，产出轮胎油、炭黑与废钢丝，为坦桑尼亚及周边工业用户提供可落地的循环燃料与材料方案。</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <main class="wrap">
+      <section>
+        <h2 class="sec-title">
+          <span class="en">About Qiangbiao</span>
+          <span class="zh">关于强标</span>
+        </h2>
+        <p class="body-text">
+          <span class="en">Qiangbiao Co., Ltd. is located in the Kibaha / Mlandizi area of Tanzania (Plot 867, Block E, Disyunyara, Mlandizi, Kibaha, Pawani). Our core process is high-temperature pyrolysis of scrap tires, producing tire-derived oil (industrial heavy oil / fuel oil), carbon black, and recovered steel wire.<br><br>We focus on real industrial use cases—boiler and furnace fuel, material reuse, and carefully scoped downstream options. Our priority is reliable supply, clear communication, and product information that can be verified—not empty claims.</span>
+          <span class="zh">强标有限公司位于坦桑尼亚 Kibaha / Mlandizi 一带（Plot 867, Block E, Disyunyara, Mlandizi, Kibaha, Pawani）。我们以废轮胎高温裂解为核心工艺，将废弃轮胎转化为工业可用的轮胎油（工业重油/燃料油）、炭黑和废钢丝。<br><br>业务面向真实工业场景：锅炉与熔炉燃料、材料回用，以及经评估后的下游加工方向。我们更看重稳定供应、清晰沟通与可核验的产品信息，而不是空泛承诺。</span>
+        </p>
+      </section>
+
+      <section>
+        <h2 class="sec-title">
+          <span class="en">Core Products</span>
+          <span class="zh">核心产品</span>
+        </h2>
+        <div class="product-grid">
+          <article class="card primary">
+            <img src="images/pyrolysis-oil.webp" alt="Tire-derived pyrolysis oil" width="800" height="450" />
+            <div class="card-body">
+              <span class="card-tag">
+                <span class="en">Primary</span>
+                <span class="zh">主产品</span>
+              </span>
+              <h3>
+                <span class="en">Tire-derived oil (industrial heavy oil / fuel oil)</span>
+                <span class="zh">轮胎油（工业重油 / 燃料油）</span>
+              </h3>
+              <p>
+                <span class="en">Obtained via high-temperature pyrolysis of scrap tires. Mainly used as fuel for industrial boilers and furnaces; may also be evaluated as a feedstock for chemical applications. In some lower-spec engine scenarios (e.g., certain agricultural machinery or marine uses), further processing may make it suitable—this must be confirmed by testing against equipment requirements. It should not be treated as a drop-in substitute for commercial diesel. Calorific value and combustion performance should be based on third-party lab results and site conditions. We describe the product as a high-calorific industrial fuel oil, with details provided for buyer comparison.</span>
+                <span class="zh">由废轮胎高温裂解获得，主要用作工业锅炉、熔炉等场景的燃料；也可作为化工原料方向进行评估。部分对燃料品质要求不高的场景（如农用机械、船舶等），经进一步处理后可能适用，需按设备要求实测验证，不宜直接等同于商品柴油。热值与燃烧表现以第三方化验及现场工况为准；我们提供高热值工业燃料油方向的产品说明，便于采购方比选。</span>
+              </p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="images/carbon-black.webp" alt="Carbon black" width="800" height="450" />
+            <div class="card-body">
+              <span class="card-tag">
+                <span class="en">Secondary</span>
+                <span class="zh">辅产品</span>
+              </span>
+              <h3>
+                <span class="en">Carbon black</span>
+                <span class="zh">炭黑</span>
+              </h3>
+              <p>
+                <span class="en">Suitable for rubber reinforcement and for industrial uses such as inks, coatings, and plastics. Specifications follow batch documentation.</span>
+                <span class="zh">可用于橡胶补强，以及油墨、涂料、塑料等工业材料方向，具体指标以批次资料为准。</span>
+              </p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="images/steel-wire.webp" alt="Recovered steel wire" width="800" height="450" />
+            <div class="card-body">
+              <span class="card-tag">
+                <span class="en">Secondary</span>
+                <span class="zh">辅产品</span>
+              </span>
+              <h3>
+                <span class="en">Recovered steel wire</span>
+                <span class="zh">废钢丝</span>
+              </h3>
+              <p>
+                <span class="en">Reusable for wire mesh, wire brushes, springs, welding electrode cores, and related metalworking applications.</span>
+                <span class="zh">可回用于钢丝网、钢丝刷、弹簧、焊条芯材等金属加工场景。</span>
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="sec-title">
+          <span class="en">Why Work With Us</span>
+          <span class="zh">为什么选择强标</span>
+        </h2>
+        <div class="scene-img">
+          <img src="images/boiler-fuel.webp" alt="Industrial boiler fuel use" width="1200" height="675" />
+        </div>
+        <ul class="why-list">
+          <li>
+            <span class="en"><strong>Circular use of scrap tires</strong> — Turning waste tires into fuel and materials for local industry, reducing stockpile pressure.</span>
+            <span class="zh"><strong>废胎循环，资源再入工业链</strong> — 把废弃轮胎转化为燃料与材料，减少堆存压力，服务本地工业用能。</span>
+          </li>
+          <li>
+            <span class="en"><strong>Clear product mix</strong> — Heavy oil as the main line; carbon black and steel wire as supporting lines, easy to match by use case.</span>
+            <span class="zh"><strong>产品结构清晰</strong> — 重油为主，炭黑与钢丝为辅，便于采购方按用途对接。</span>
+          </li>
+          <li>
+            <span class="en"><strong>Practical claims</strong> — Boilers and furnaces are the primary fuel path; engine use is described only as “after processing, lower-spec, subject to testing”—no overstatement of diesel replacement.</span>
+            <span class="zh"><strong>用途表述务实</strong> — 锅炉/熔炉燃料为主路径；发动机类场景仅作“处理后、低规格、需实测”说明，不夸大替代能力。</span>
+          </li>
+          <li>
+            <span class="en"><strong>Local contactability</strong> — Tanzania address and multiple phone lines for inquiry, sampling, and commercial follow-up.</span>
+            <span class="zh"><strong>本地可联络</strong> — 坦桑尼亚本地地址与多线电话，方便询价、取样与商务跟进。</span>
+          </li>
+          <li>
+            <span class="en"><strong>Evidence-based dialogue</strong> — Quality, calorific value, and suitability are anchored in lab data and on-site verification.</span>
+            <span class="zh"><strong>沟通以资料为准</strong> — 品质、热值、适用性以化验与现场验证为依据，减少信息不对称。</span>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="sec-title">
+          <span class="en">Who We Serve</span>
+          <span class="zh">我们服务谁</span>
+        </h2>
+        <ul class="serve-list">
+          <li>
+            <span class="en">Manufacturers and processors that need fuel for industrial boilers and furnaces</span>
+            <span class="zh">需要工业锅炉、熔炉燃料的制造与加工企业</span>
+          </li>
+          <li>
+            <span class="en">Energy users evaluating tire-derived oil as a partial alternative to conventional heavy oil / diesel (substitution ratio and economics should be calculated by operating conditions)</span>
+            <span class="zh">希望用循环燃料油部分替代传统重油/柴油采购的用能单位（替代比例与经济性需按工况核算）</span>
+          </li>
+          <li>
+            <span class="en">Downstream processors needing carbon black for rubber, inks, coatings, or plastics</span>
+            <span class="zh">橡胶、油墨、涂料、塑料等需要炭黑原料的下游加工方</span>
+          </li>
+          <li>
+            <span class="en">Metalworking buyers seeking recovered steel wire for mesh, hardware, springs, or welding materials</span>
+            <span class="zh">金属制品、五金与焊材相关的钢丝回用需求方</span>
+          </li>
+          <li>
+            <span class="en">Partners interested in scrap-tire disposal and local circular resources</span>
+            <span class="zh">关注废胎处置与本地资源循环的合作伙伴</span>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="sec-title">
+          <span class="en">Contact Us</span>
+          <span class="zh">联系我们</span>
+        </h2>
+        <div class="contact-hero">
+          <img src="images/contact-coop.webp" alt="Business cooperation" width="1200" height="675" />
+        </div>
+        <div class="contact-card">
+          <div class="contact-grid">
+            <div class="contact-row">
+              <span class="label"><span class="en">Company</span><span class="zh">公司</span></span>
+              <span>
+                <span class="en">Qiangbiao Co., Ltd. (Strong Mark)</span>
+                <span class="zh">强标有限公司（Qiangbiao Co., Ltd. / Strong Mark）</span>
+              </span>
+            </div>
+            <div class="contact-row">
+              <span class="label"><span class="en">Address</span><span class="zh">地址</span></span>
+              <span>Plot 867, Block E, Disyunyara, Mlandizi, Kibaha, Pawani, Tanzania</span>
+            </div>
+            <div class="contact-row">
+              <span class="label"><span class="en">Email</span><span class="zh">邮箱</span></span>
+              <a href="mailto:lcj2772@gmail.com">lcj2772@gmail.com</a>
+            </div>
+            <div class="contact-row">
+              <span class="label"><span class="en">Tel</span><span class="zh">电话</span></span>
+              <a href="tel:+255616999999">+255 616 999 999</a>
+            </div>
+            <div class="contact-row">
+              <span class="label"><span class="en">Business Center</span><span class="zh">商务中心</span></span>
+              <a href="tel:+255621539999">+255 621 539 999</a>
+            </div>
+            <div class="contact-row">
+              <span class="label"><span class="en">Sales Manager Mr. Liu</span><span class="zh">销售经理 刘经理</span></span>
+              <a href="tel:+255759888819">+255 759 888 819</a>
+            </div>
+          </div>
+        </div>
+        <p class="contact-note">
+          <span class="en">Please inquire by phone or email for quotations and sample information. We match each request to batch data and site needs.</span>
+          <span class="zh">欢迎来电或邮件询价、索取样油/样品信息，我们按批次资料与现场需求对接。</span>
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span class="en">© Qiangbiao Co., Ltd. / Strong Mark · Qiangbiao Energy · Tanzania</span>
+      <span class="zh">© 强标有限公司（Qiangbiao / Strong Mark）· Qiangbiao Energy · 坦桑尼亚</span>
+    </footer>
+
+    <div class="sticky-cta">
+      <div class="sticky-cta-inner">
+        <a class="btn-call" href="tel:+255616999999">
+          <span class="en">Call now</span>
+          <span class="zh">立即致电</span>
+        </a>
+        <a class="btn-mail" href="mailto:lcj2772@gmail.com">
+          <span class="en">Email</span>
+          <span class="zh">发邮件</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+<script>
+function setLang(lang) {
+  var root = document.getElementById('lang-root');
+  root.setAttribute('data-lang', lang);
+  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+  try { localStorage.setItem('qb-lang', lang); } catch (e) {}
+}
+(function () {
+  try {
+    var saved = localStorage.getItem('qb-lang');
+    if (saved === 'zh' || saved === 'en') setLang(saved);
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>
